@@ -42,20 +42,39 @@ void * memset(void *b, int c, size_t len) {
   return b;
 }
 
-
 size_t strlen(const char *s) {
-  return sizeof s;
+  if (s == NULL) {
+    return 0;
+  }
+  for (size_t i = 0;; ++i) {
+    if (s[i] == '\0') {
+      return i;
+    }
+  }
 }
 
 size_t strnlen(const char *s, size_t maxlen) {
-
+   if (s == NULL) {
+    return 0;
+  }
+  for (size_t i = 0; i < maxlen; ++i) {
+    if (s[i] == '\0') {
+      return i;
+    } else {
+      return maxlen;
+    }
+  }
 }
 
 int strcmp(const char *s1, const char *s2) {
-  if (s1 < s2) {
+  if (strlen(s1) != strlen(s2)) {
     return -1;
   } else {
-    for 
+    for (size_t i = 0; i < strlen(s2); i++) {
+      if (s1[i] != s2[i]) {
+        return -1;
+      }
+    }
   }
 
   return 0;
@@ -63,18 +82,7 @@ int strcmp(const char *s1, const char *s2) {
 
 int strncmp(const char *s1, const char *s2, size_t n) {
 
+
   return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 

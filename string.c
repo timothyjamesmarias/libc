@@ -43,4 +43,38 @@ void * memset(void *b, int c, size_t len) {
 }
 
 
+size_t strlen(const char *s) {
+  return sizeof s;
+}
+
+size_t strnlen(const char *s, size_t maxlen) {
+
+}
+
+int strcmp(const char *s1, const char *s2) {
+  if (s1 < s2) {
+    return -1;
+  } else {
+    for 
+  }
+
+  return 0;
+}
+
+int strncmp(const char *s1, const char *s2, size_t n) {
+
+  return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 

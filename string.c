@@ -6,7 +6,8 @@ int memcmp(const void *s1, const void *s2, size_t n) {
 
   for (size_t i = 0; i < n; i++) {
     if (a[i] < b[i]) {
-      return -1;
+    
+  return -1;
     } else if (b[i] < a[i]) {
       return 1;
     }
@@ -32,10 +33,10 @@ void * memcpy(void *restrict dst, const void *restrict src, size_t n) {
   return dst;
 }
 
-void * memset(void *b, int c, size_t len) {
+void * memset(void *b, int c, size_t n) {
   unsigned char * buffer = (unsigned char*)b;
 
-  for (size_t i = 0; i < len; i++) {
+  for (size_t i = 0; i < n; i++) {
     buffer[i] = (unsigned char)c;
   }
 
@@ -53,35 +54,28 @@ size_t strlen(const char *s) {
   }
 }
 
-size_t strnlen(const char *s, size_t maxlen) {
+size_t strnlen(const char *s, size_t n) {
    if (s == NULL) {
     return 0;
   }
-  for (size_t i = 0; i < maxlen; ++i) {
+  for (size_t i = 0; i < n; ++i) {
     if (s[i] == '\0') {
       return i;
     } else {
-      return maxlen;
+      return n;
     }
   }
 }
 
 int strcmp(const char *s1, const char *s2) {
-  if (strlen(s1) != strlen(s2)) {
-    return -1;
-  } else {
-    for (size_t i = 0; i < strlen(s2); i++) {
-      if (s1[i] != s2[i]) {
-        return -1;
-      }
-    }
-  }
 
-  return 0;
 }
 
 int strncmp(const char *s1, const char *s2, size_t n) {
 
+  for (size_t i = 0; i < n; i++) {
+
+  }
 
   return 0;
 }
